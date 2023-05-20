@@ -16,7 +16,7 @@ const WeatherApp = () => {
     setCity(event.target.value);
   };
 
-  const API_KEY = "45dd4ed827fb67850c7b9f82eb5abcd4";
+  const API_KEY = process.env.API_KEY;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
