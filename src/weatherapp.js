@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
-
 const WeatherApp = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
@@ -16,7 +15,7 @@ const WeatherApp = () => {
     setCity(event.target.value);
   };
 
-  const API_KEY = process.env.API_KEY;
+  const api="45dd4ed827fb67850c7b9f82eb5abcd4"
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +24,7 @@ const WeatherApp = () => {
 
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
       );
       setWeatherData(response.data);
     } catch (error) {
@@ -68,7 +67,7 @@ const WeatherApp = () => {
             color="primary"
             mb={2}
           />
-          
+
           <Button
             type="submit"
             variant="contained"
